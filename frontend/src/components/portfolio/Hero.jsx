@@ -85,15 +85,17 @@ export default function Hero({ profile, onUploaded }) {
             <div className="eyebrow fade-up">Portfolio · 2026</div>
             <h1 className="mt-4 font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] fade-up d-1">
               Hi, I'm <span className="text-gradient">Shikha Yadav</span>
-              <span className="block text-[color:var(--ink-soft)] text-2xl sm:text-3xl mt-3 font-normal">
-                Aspiring Data Scientist
+              <span className="block mt-3 text-4xl sm:text-5xl lg:text-6xl text-white font-normal">
+                an Aspiring{" "}
+                <span className="italic" style={{ color: "#6ea8fe" }}>
+                  Data Scientist
+                </span>
               </span>
             </h1>
             <p className="mt-6 text-[color:var(--ink-soft)] text-base sm:text-lg leading-relaxed max-w-2xl fade-up d-2">
-              BCA — Data Science &amp; Artificial Intelligence student at Babu Banarasi Das
-              University. I turn raw data into clear insights using Python, SQL and modern
-              visualization tools — currently learning Machine Learning and building real-world
-              projects.
+              BCA (Data Science &amp; AI) student at Babu Banarasi Das University. I turn raw data
+              into clear, decision-driving insights — combining Python, SQL, visualization and the
+              foundations of Machine Learning to solve real-world problems.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3 fade-up d-3">
@@ -118,6 +120,12 @@ export default function Hero({ profile, onUploaded }) {
               >
                 Contact Me
               </button>
+            </div>
+
+            <div className="mt-8 grid grid-cols-3 max-w-md gap-3 fade-up d-4" data-testid="hero-stats">
+              <HeroStat value="5+" label="Projects" />
+              <HeroStat value="3rd" label="Year BCA" />
+              <HeroStat value="10+" label="Tools" />
             </div>
 
             <div className="mt-10 flex items-center gap-5 fade-up d-4">
@@ -213,5 +221,22 @@ export default function Hero({ profile, onUploaded }) {
         </div>
       </div>
     </section>
+  );
+}
+
+function HeroStat({ value, label }) {
+  return (
+    <div
+      className="rounded-2xl px-4 py-3 text-center"
+      style={{
+        background: "rgba(15, 17, 28, 0.65)",
+        border: "1px solid rgba(255,255,255,0.08)",
+        backdropFilter: "blur(8px)",
+        WebkitBackdropFilter: "blur(8px)",
+      }}
+    >
+      <div className="font-display text-2xl text-gradient leading-none">{value}</div>
+      <div className="font-mono-sm text-[color:var(--ink-soft)] mt-1.5 text-[10px]">{label}</div>
+    </div>
   );
 }
