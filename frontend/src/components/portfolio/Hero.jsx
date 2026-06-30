@@ -171,10 +171,10 @@ export default function Hero({ profile, onUploaded }) {
               <div className="absolute -inset-10 rounded-full opacity-70 blur-3xl" aria-hidden style={{
                 background: "radial-gradient(closest-side, rgba(250,204,21,0.22), transparent 70%)",
               }} />
-              <div className="photo-ring w-[360px] h-[360px] sm:w-[440px] sm:h-[440px]" style={{ borderRadius: "9999px" }}>
+              <div className="photo-ring w-[300px] h-[300px] sm:w-[360px] sm:h-[360px]" style={{ borderRadius: "9999px" }}>
                 <div
                   className="photo-inner w-full h-full flex items-center justify-center"
-                  style={{ padding: "14px" }}
+                  style={{ padding: "10px" }}
                 >
                   {photoSrc ? (
                     <img
@@ -182,7 +182,7 @@ export default function Hero({ profile, onUploaded }) {
                       src={photoSrc}
                       alt="Shikha Yadav"
                       className="w-full h-full object-cover rounded-full"
-                      style={{ objectPosition: "50% 30%" }}
+                      style={{ objectPosition: "50% 22%" }}
                     />
                   ) : (
                     <div className="text-center px-6">
@@ -196,11 +196,7 @@ export default function Hero({ profile, onUploaded }) {
                 </div>
               </div>
 
-              {/* Floating skill chips */}
-              <FloatingChip className="-left-6 top-10" label="Python" />
-              <FloatingChip className="-right-4 top-28" label="SQL" />
-              <FloatingChip className="-left-2 bottom-16" label="Data Viz" />
-              <FloatingChip className="-right-6 bottom-8" label="ML" />
+              {/* Floating skill chips removed for a clean professional look */}
 
               <button
                 data-testid="hero-upload-photo-btn"
