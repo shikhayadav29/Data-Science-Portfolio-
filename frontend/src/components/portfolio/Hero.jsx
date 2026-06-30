@@ -182,7 +182,7 @@ export default function Hero({ profile, onUploaded }) {
                       src={photoSrc}
                       alt="Shikha Yadav"
                       className="w-full h-full object-cover rounded-full"
-                      style={{ objectPosition: "50% 22%" }}
+                      style={{ objectPosition: "50% 5%" }}
                     />
                   ) : (
                     <div className="text-center px-6">
