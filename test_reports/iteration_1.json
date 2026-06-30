@@ -1,0 +1,30 @@
+{
+  "summary": "First-finish smoke test for Shikha Yadav portfolio. All 9 backend endpoints behave correctly (profile, photo/resume serve + uploads with validation, contact CRUD + validation). Frontend loads with seeded photo, all 9 nav links, 5 projects, 6 services, 13 skills, correct contact info (+91 63942 76341, email, LinkedIn, GitHub), contact form submits and shows success toast, footer has 2026 copyright and tel link. No blockers found.",
+  "tested_scope": ["backend", "frontend", "integration"],
+  "passed": [
+    "GET /api/profile returns photo_url and resume_url (both non-null after seeding)",
+    "GET /api/profile/photo/file -> 200, image/jpeg, 73363 bytes",
+    "GET /api/profile/resume/file -> 200, application/octet-stream, 82221 bytes",
+    "POST /api/profile/photo with valid JPEG -> 200 + photo_url updated",
+    "POST /api/profile/resume with valid PDF -> 200 + resume_url updated",
+    "POST /api/profile/photo with .txt -> 400 (invalid image type)",
+    "POST /api/profile/resume with .txt -> 400 (invalid resume type)",
+    "POST /api/contact valid payload -> 200 + id returned; GET /api/contact lists it",
+    "POST /api/contact invalid email -> 422; missing fields -> 422",
+    "Frontend loads at REACT_APP_BACKEND_URL, hero photo visible (src points to /api/profile/photo/file)",
+    "All 9 nav links present and visible (home/about/education/skills/projects/services/experience/resume/contact)",
+    "Projects section: 5 cards; Services: 6 cards; Skills: 13 cards",
+    "Resume section: download-btn and upload-btn visible",
+    "Contact: phone href=tel:+916394276341 (text '+91 63942 76341'), email mailto:shikha29072005@gmail.com, LinkedIn and GitHub URLs match spec",
+    "Contact form submission shows success toast 'Message sent! I'll get back to you soon.'",
+    "Footer shows 2026 copyright with Shikha Yadav and footer-phone tel:+916394276341"
+  ],
+  "failed": [],
+  "observations": [
+    "hero-cta-resume element returned no 'href' attribute (likely implemented as a button with onClick that opens the resume URL rather than an <a> tag). Not a blocker as label/behavior present; main agent may verify if anchor with href is preferred."
+  ],
+  "action_items": [],
+  "success_rate": {"backend": "100%", "frontend": "100%"},
+  "retest_needed": false,
+  "full_testing_deferred": true
+}
