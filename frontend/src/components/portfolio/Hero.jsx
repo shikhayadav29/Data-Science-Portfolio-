@@ -172,13 +172,16 @@ export default function Hero({ profile, onUploaded }) {
                 background: "radial-gradient(closest-side, rgba(250,204,21,0.22), transparent 70%)",
               }} />
               <div className="photo-ring w-[300px] h-[300px] sm:w-[360px] sm:h-[360px]" style={{ borderRadius: "9999px" }}>
-                <div className="photo-inner w-full h-full flex items-center justify-center">
+                <div
+                  className="photo-inner w-full h-full flex items-center justify-center"
+                  style={{ padding: "22px" }}
+                >
                   {photoSrc ? (
                     <img
                       data-testid="hero-photo-img"
                       src={photoSrc}
                       alt="Shikha Yadav"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover rounded-full"
                       style={{ objectPosition: "center 22%" }}
                     />
                   ) : (
