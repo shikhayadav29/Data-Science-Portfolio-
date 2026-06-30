@@ -174,7 +174,7 @@ export default function Hero({ profile, onUploaded }) {
               <div className="photo-ring w-[360px] h-[360px] sm:w-[440px] sm:h-[440px]" style={{ borderRadius: "9999px" }}>
                 <div
                   className="photo-inner w-full h-full flex items-center justify-center"
-                  style={{ padding: "20px" }}
+                  style={{ padding: "14px" }}
                 >
                   {photoSrc ? (
                     <img
@@ -182,7 +182,7 @@ export default function Hero({ profile, onUploaded }) {
                       src={photoSrc}
                       alt="Shikha Yadav"
                       className="w-full h-full object-cover rounded-full"
-                      style={{ objectPosition: "center 22%" }}
+                      style={{ objectPosition: "50% 30%" }}
                     />
                   ) : (
                     <div className="text-center px-6">
