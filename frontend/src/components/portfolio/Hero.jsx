@@ -171,7 +171,7 @@ export default function Hero({ profile, onUploaded }) {
               <div className="absolute -inset-10 rounded-full opacity-70 blur-3xl" aria-hidden style={{
                 background: "radial-gradient(closest-side, rgba(250,204,21,0.22), transparent 70%)",
               }} />
-              <div className="photo-ring w-[280px] h-[340px] sm:w-[340px] sm:h-[420px]" style={{ borderRadius: "9999px" }}>
+              <div className="photo-ring w-[300px] h-[300px] sm:w-[360px] sm:h-[360px]" style={{ borderRadius: "9999px" }}>
                 <div className="photo-inner w-full h-full flex items-center justify-center">
                   {photoSrc ? (
                     <img
