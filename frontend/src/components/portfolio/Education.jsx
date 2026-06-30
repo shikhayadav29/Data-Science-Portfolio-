@@ -23,7 +23,7 @@ export default function Education() {
                 <GraduationCap />
               </div>
               <div className="flex-1">
-                <div className="font-mono-sm text-[color:var(--brand)]">2023 — Present · 3rd Year</div>
+                <div className="font-mono-sm text-[color:var(--brand)]">2024 — 2027 · 3rd Year</div>
                 <h3 className="mt-1 font-display text-2xl sm:text-3xl">
                   Bachelor of Computer Applications
                 </h3>
@@ -39,7 +39,7 @@ export default function Education() {
 
                 <div className="mt-5 flex flex-wrap gap-3 text-sm">
                   <Badge icon={MapPin} label="Lucknow, Uttar Pradesh" />
-                  <Badge icon={CalendarDays} label="Expected 2026" />
+                  <Badge icon={CalendarDays} label="Expected 2027" />
                 </div>
 
                 <div className="mt-6 flex flex-wrap gap-2">
