@@ -1,7 +1,41 @@
 import React, { useRef, useState } from "react";
-import { Camera, Download, ArrowDown, Sparkles, Github, Linkedin, Mail } from "lucide-react";
+import { Camera, Download, ArrowDown, Sparkles, Github, Linkedin, Mail, Code2, Database, LineChart, Cpu } from "lucide-react";
 import { toast } from "sonner";
 import { uploadPhoto, absoluteUrl } from "@/lib/api";
+
+const CHIP_ICONS = {
+  Python: Code2,
+  SQL: Database,
+  "Data Viz": LineChart,
+  ML: Cpu,
+};
+
+function FloatingChip({ className = "", label }) {
+  const Icon = CHIP_ICONS[label] || Sparkles;
+  return (
+    <div
+      className={`absolute z-10 px-3 py-2 rounded-xl flex items-center gap-2 text-[12px] font-semibold text-white/90 ${className}`}
+      style={{
+        background: "rgba(15, 17, 28, 0.75)",
+        border: "1px solid rgba(255, 255, 255, 0.10)",
+        backdropFilter: "blur(10px)",
+        WebkitBackdropFilter: "blur(10px)",
+        boxShadow: "0 10px 30px -12px rgba(0,0,0,0.7)",
+      }}
+    >
+      <span
+        className="w-5 h-5 rounded-md grid place-items-center"
+        style={{
+          background: "linear-gradient(135deg, rgba(250,204,21,0.25), rgba(77,139,255,0.25))",
+          color: "#facc15",
+        }}
+      >
+        <Icon size={12} />
+      </span>
+      {label}
+    </div>
+  );
+}
 
 export default function Hero({ profile, onUploaded }) {
   const fileRef = useRef(null);
@@ -122,8 +156,14 @@ export default function Hero({ profile, onUploaded }) {
 
           <div className="lg:col-span-5 order-1 lg:order-2 flex justify-center" data-testid="hero-photo-area">
             <div className="relative">
-              <div className="absolute -inset-10 brand-gradient opacity-20 blur-3xl rounded-full" aria-hidden />
-              <div className="photo-ring w-[280px] h-[280px] sm:w-[340px] sm:h-[340px]">
+              <div className="absolute -inset-16 rounded-full" aria-hidden style={{
+                background: "radial-gradient(closest-side, rgba(77,139,255,0.25), rgba(34,211,238,0.10) 55%, transparent 75%)",
+                filter: "blur(10px)",
+              }} />
+              <div className="absolute -inset-10 rounded-full opacity-70 blur-3xl" aria-hidden style={{
+                background: "radial-gradient(closest-side, rgba(250,204,21,0.22), transparent 70%)",
+              }} />
+              <div className="photo-ring w-[280px] h-[340px] sm:w-[340px] sm:h-[420px]" style={{ borderRadius: "9999px" }}>
                 <div className="photo-inner w-full h-full flex items-center justify-center">
                   {photoSrc ? (
                     <img
@@ -145,10 +185,16 @@ export default function Hero({ profile, onUploaded }) {
                 </div>
               </div>
 
+              {/* Floating skill chips */}
+              <FloatingChip className="-left-6 top-10" label="Python" />
+              <FloatingChip className="-right-4 top-28" label="SQL" />
+              <FloatingChip className="-left-2 bottom-16" label="Data Viz" />
+              <FloatingChip className="-right-6 bottom-8" label="ML" />
+
               <button
                 data-testid="hero-upload-photo-btn"
                 onClick={() => fileRef.current?.click()}
-                className="absolute bottom-3 right-3 btn-primary rounded-full w-12 h-12 grid place-items-center shadow-xl"
+                className="absolute bottom-3 right-3 btn-primary rounded-full w-12 h-12 grid place-items-center shadow-xl z-10"
                 aria-label="Upload profile photo"
                 disabled={uploading}
               >

@@ -32,10 +32,25 @@ body {
     color: var(--ink);
     background: #050508;
     background-image:
-        radial-gradient(900px 600px at 12% 10%, rgba(250, 204, 21, 0.06), transparent 65%),
-        radial-gradient(900px 600px at 88% 20%, rgba(77, 139, 255, 0.05), transparent 65%);
+        radial-gradient(700px 480px at 18% 22%, rgba(250, 204, 21, 0.10), transparent 65%),
+        radial-gradient(780px 540px at 82% 30%, rgba(77, 139, 255, 0.14), transparent 65%),
+        radial-gradient(600px 400px at 82% 30%, rgba(34, 211, 238, 0.06), transparent 70%);
     background-attachment: fixed;
     position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+    background-size: 72px 72px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 20%, black 0%, rgba(0,0,0,0.55) 45%, transparent 80%);
+            mask-image: radial-gradient(ellipse 80% 60% at 50% 20%, black 0%, rgba(0,0,0,0.55) 45%, transparent 80%);
 }
 
 #root { position: relative; z-index: 1; }
