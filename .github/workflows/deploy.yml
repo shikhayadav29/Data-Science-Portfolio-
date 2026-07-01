@@ -1,52 +1,16 @@
-name: Deploy Frontend to GitHub Pages
+name: Add GitHub Actions workflow for frontend deployment
 
 on:
   push:
     branches:
       - main
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Clean Install Dependencies
-        run: |
-          rm -rf node_modules
-          npm install --legacy-peer-deps
-        working-directory: ./frontend
-
-      - name: Build project
-        run: npm run build
-        working-directory: ./frontend
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './frontend/build'
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Auto-generated changes
+        run: echo "Automated frontend deployment workflow placeholder"
