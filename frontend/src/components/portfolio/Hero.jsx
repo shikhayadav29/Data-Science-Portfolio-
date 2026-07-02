@@ -68,12 +68,8 @@ export default function Hero({ profile, onUploaded }) {
   };
 
   const downloadResume = () => {
-    if (profile?.resume_url) {
-      window.open(absoluteUrl(profile.resume_url), "_blank");
-    } else {
-      go("resume");
-      toast.info("Upload your resume in the Resume section to enable download");
-    }
+     window.open("/resume.pdf","_blank");
+   
   };
 
   return (
