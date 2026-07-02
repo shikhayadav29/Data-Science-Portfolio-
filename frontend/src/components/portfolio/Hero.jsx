@@ -69,8 +69,7 @@ export default function Hero({ profile, onUploaded }) {
 
   const downloadResume = () => {
      window.open("/resume.pdf","_blank");
-   
-  };
+    };
 
   return (
     <section id="home" className="section-pad pt-36 relative overflow-hidden" data-testid="hero-section">
@@ -93,29 +92,31 @@ export default function Hero({ profile, onUploaded }) {
               foundations of Machine Learning to solve real-world problems.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-3 fade-up d-3">
-              <button
-                data-testid="hero-cta-projects"
-                onClick={() => go("projects")}
-                className="btn-primary rounded-full px-6 py-3 text-sm font-semibold inline-flex items-center gap-2"
-              >
-                View Projects <ArrowDown size={16} />
-              </button>
-              <button
-                data-testid="hero-cta-resume"
-                onClick={downloadResume}
-                className="btn-ghost rounded-full px-6 py-3 text-sm font-semibold inline-flex items-center gap-2"
-              >
-                <Download size={16} /> Download Resume
-              </button>
-              <button
-                data-testid="hero-cta-contact"
-                onClick={() => go("contact")}
-                className="btn-ghost rounded-full px-6 py-3 text-sm font-semibold inline-flex items-center gap-2"
-              >
-                Contact Me
-              </button>
-            </div>
+         <div className="mt-8 flex flex-wrap items-center gap-3 fade-up d-3">
+  <button
+    data-testid="hero-cta-projects"
+    onClick={() => go("projects")}
+    className="btn-primary rounded-full px-6 py-3 text-sm font-semibold inline-flex items-center gap-2"
+  >
+    View Projects <ArrowDown size={16} />
+  </button>
+
+  <button
+    data-testid="hero-cta-resume"
+    onClick={downloadResume}
+    className="btn-ghost rounded-full px-6 py-3 text-sm font-semibold inline-flex items-center gap-2"
+  >
+    <Download size={16} /> Download Resume
+  </button>
+
+  <button
+    data-testid="hero-cta-contact"
+    onClick={() => go("contact")}
+    className="btn-ghost rounded-full px-6 py-3 text-sm font-semibold inline-flex items-center gap-2"
+  >
+    Contact Me
+  </button>
+</div>
 
             <div className="mt-8 grid grid-cols-3 max-w-md gap-3 fade-up d-4" data-testid="hero-stats">
               <HeroStat value="5+" label="Projects" />
@@ -205,7 +206,7 @@ export default function Hero({ profile, onUploaded }) {
                 aria-label="Upload profile photo"
                 disabled={uploading}
               >
-                <Camera size={18} />
+              <Camera size={18} />
               </button>
               <input
                 ref={fileRef}
