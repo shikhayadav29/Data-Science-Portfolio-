@@ -41,8 +41,7 @@ export default function Hero({ profile, onUploaded }) {
   const fileRef = useRef(null);
   const [uploading, setUploading] = useState(false);
 
-  const photoSrc = profile?.photo_url ? absoluteUrl(profile.photo_url) : null;
-
+ const photoSrc = "/photo.jpeg";
   const handleFile = async (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
